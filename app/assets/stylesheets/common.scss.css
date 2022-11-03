@@ -1,33 +1,52 @@
-header {
-   width: 100%;
-   padding: 15px;
-   margin-bottom: 30px;
-   border-bottom: 7px solid orange;
+body {
+ margin: 0px;
+}
+
+.partial-header {
+ width: 100%;
+ padding: 15px;
+ margin-top: 0px;
+ margin-bottom: 30px;
+ color: white;
+ border-bottom: 7px solid orange;
+ background-color: #E83929
 }
  
-footer{
-   width: 100%;
-   padding: 15px;
-   margin-top: 30px;
-   border-top: 7px solid orange;
+.partial-footer{
+ width: 100%;
+ padding: 15px;
+ margin-top: 30px;
+ color: white;
+ border-top: 7px solid orange;
+ background-color: #E83929
 }
- 
-.partial {
-   border: 1px solid red;
-   padding: 15px;
+
+table {
+ margin: 10px;
 }
 
 table th{
- background-color:#bc25b;
- Padding:10px 20px;
+ background-color:#FDE8E9;
+ padding: 15px 20px;
 }
 
 table td{
- background-color:10px 20px;
- padding:10px 20px; 
+ background-color: #FEE3D7;
+ padding: 15px 20px; 
 }
 
-notice{
- background-color:#ccf;
- padding:5px;
+p{
+ margin: 20px;
+}
+
+h3{
+ margin: 20px;
+}
+
+.notice{
+ font-weight: bold;
+ background-color: #D3E173;
+ padding: 1em 1em;
+ margin: 1em 20em;
+ border: dashed 2px #5b8bd0;
 }

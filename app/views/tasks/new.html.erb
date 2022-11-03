@@ -1,35 +1,36 @@
+<%= render "shared/partial-header" %>
+
 <h3>スケジュール新規登録</h3>
  
-<%= form_with model:@task do |t| %>  
+<%= form_with model:@task do |task| %>  
  <table>
   <tr>
-   <th><%= t.label :title,"タイトル" %></th>
-   <td><%= t.text_field :title, :placeholder => "スケジュール概要" %></td>
+   <th><%= task.label :title,"タイトル" %></th>
+   <td><%= task.text_field :title, :placeholder => "スケジュール概要" %></td>
   </tr>
  
   <tr>
-   <th><%= t.label :created_day,"スケジュール開始日" %>
-   <td><%= t.date_field :created_at %></td>
+   <th><%= task.label :created_day,"スケジュール開始日" %>
+   <td><%= task.date_field :created_at %></td>
   </tr>
 
   <tr> 
-   <th><%= t.label :finished_day,"スケジュール終了日" %></th>
-   <td><%= t.date_field :finished_day %></td>
+   <th><%= task.label :finished_day,"スケジュール終了日" %></th>
+   <td><%= task.date_field :finished_day %></td>
   </tr>
 
   <tr>
-   <th><%= t.label :is_all_day,"終日かどうか" %></th>
-   <td><%= t.check_box :is_all_day %></td>
+   <th><%= task.label :is_all_day,"終日かどうか" %></th>
+   <td><%= task.check_box :is_all_day %></td>
   </tr>
 
   <tr>
-   <th><%= t.label :memo,"スケジュールメモ" %></th>
-   <td><%= t.text_area :memo %></td>
+   <th><%= task.label :memo,"スケジュールメモ" %></th>
+   <td><%= task.text_area :memo %></td>
   </tr>
  </table>
  
-  <ul>
-   <li><%= t.submit"登録完了する" %></li>
-   <li><%= link_to"スケジュール一覧画面に戻る",tasks_index_path %></li>
-  </ul>
+   <p><%= task.submit"登録完了する" %></p>
+   <p><%= link_to"スケジュール一覧画面に戻る",tasks_index_path %></p>
+
 <% end %>

@@ -1,4 +1,6 @@
-<h1>スケジュール編集</h1>
+<%= render "shared/partial-header" %>
+
+<h3>スケジュール詳細</h3>
 
  <table>
   <tr>
@@ -8,12 +10,12 @@
  
   <tr>
    <th>スケジュール開始日</th>
-   <td><%= @task.created_at %></td>
+   <td><%= @task.created_at.to_s(:datetime_jp) %></td>
   </tr>
 
   <tr> 
    <th>スケジュール終了日</th>
-   <td><%= @task.finished_day %></td>
+   <td><%= @task.finished_day.to_s(:datetime_jp) %></td>
   </tr>
 
   <tr>
@@ -28,7 +30,6 @@
  </table>
  
 <div class = "edit-footer">
- <ul>
-  <li><%= link_to"スケジュール一覧画面に戻る",tasks_index_path %></li>
- </ul>
+  <p><%= link_to"スケジュールの編集を行う",edit_task_path %></p>
+  <p><%= link_to"スケジュール一覧画面に戻る",tasks_index_path %></p>
 </div>

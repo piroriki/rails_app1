@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
- 
+
  def index
   @tasks = Task.all #indexのみインスタンス変数が複数形、レコード全てのデータを取得させる
  end
@@ -47,7 +47,13 @@ class TasksController < ApplicationController
   @task = Task.find(params[:id])
   @task.destroy
   flash[:notice]="スケジュールの削除が完了しました" #削除が完了したらメッセージを表示させる
-  redirect_to: tasks
+  redirect_to:tasks
+ end
+
+
+ def time
+  time = datetime.strftime("%Y年 %m月 %d日")
+  @time = time
  end
 
 

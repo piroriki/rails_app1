@@ -1,3 +1,6 @@
+<%= render "shared/partial-header" %>
+
+<h3>スケジュール一覧</h3>
 
 <% if flash[:notice] %>
  <p class="notice"><%= flash[:notice] %></p>
@@ -20,24 +23,24 @@
  </thead>
 
  <tbody>
-  <% @tasks.each do |t| %>
+  <% @tasks.each do |task| %>
    <tr>
-    <td><%= t.id %></td>
-    <td><%= t.title %></td>
-    <td><%= t.created_at.to_s(:datetime_jp) %></td>
-    <td><%= t.finished_day.to_s(:datetime_jp) %></td>
-    <td><%= t.is_all_day %></td>
-    <td><%= t.updated_at.to_s(:datetime_jp) %></td>
-    <td><%= t.memo %></td>
+    <td><%= task.id %></td>
+    <td><%= task.title %></td>
+    <td><%= task.created_at.to_s(:datetime_jp) %></td>
+    <td><%= task.finished_day.to_s(:datetime_jp) %></td>
+    <td><%= task.is_all_day %></td>
+    <td><%= task.updated_at.to_s(:datetime_jp) %></td>
+    <td><%= task.memo %></td>
 
     <td>
-     <%= link_to"参照",task_path(@task.id) %>
+     <%= link_to"参照",task_path(task) %>
     </td>
     <td>
-     <%= link_to"編集",edit_task_path(@task) %>
+     <%= link_to"編集",edit_task_path(task) %>
     </td>
     <td>
-     <%= link_to"削除",task_path(@task), method: :delete, {confirm: "本当に削除しますか？"} %>
+     <%= button_to"削除",task_path(task), method: :delete %>
     </td>
    </tr>
   <% end %>
@@ -45,3 +48,5 @@
 </table>
 
 <p><%= link_to "スケジュール新規登録",new_task_path %></p>
+
+<%= render "shared/partial-footer" %>
