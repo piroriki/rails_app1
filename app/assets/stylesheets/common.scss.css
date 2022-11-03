@@ -28,11 +28,15 @@ table {
 table th{
  background-color:#FDE8E9;
  padding: 15px 20px;
+ text-align: center;
+ vertical-align: top;
 }
 
 table td{
  background-color: #FEE3D7;
  padding: 15px 20px; 
+ text-align: center;
+ vertical-align: top;
 }
 
 p{

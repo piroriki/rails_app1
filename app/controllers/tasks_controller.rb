@@ -51,10 +51,4 @@ class TasksController < ApplicationController
  end
 
 
- def time
-  time = datetime.strftime("%Y年 %m月 %d日")
-  @time = time
- end
-
-
 end
