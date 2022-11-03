@@ -1,0 +1,34 @@
+<h1>スケジュール編集</h1>
+
+ <table>
+  <tr>
+   <th>タイトル</th>
+   <td><%= @task.title %></td>
+  </tr>
+ 
+  <tr>
+   <th>スケジュール開始日</th>
+   <td><%= @task.created_at %></td>
+  </tr>
+
+  <tr> 
+   <th>スケジュール終了日</th>
+   <td><%= @task.finished_day %></td>
+  </tr>
+
+  <tr>
+   <th>終日かどうか</th>
+   <td><%= @task.is_all_day %></td>
+  </tr>
+
+  <tr>
+   <th>メモ</th>
+   <td><%= @task.memo %></td>
+  </tr>
+ </table>
+ 
+<div class = "edit-footer">
+ <ul>
+  <li><%= link_to"スケジュール一覧画面に戻る",tasks_index_path %></li>
+ </ul>
+</div>
