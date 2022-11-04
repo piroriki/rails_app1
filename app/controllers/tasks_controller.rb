@@ -24,6 +24,7 @@ class TasksController < ApplicationController
 
  def show
   @task = Task.find(params[:id])
+  @tasks_count = Task.all.count
  end
 
 
