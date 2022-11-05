@@ -54,3 +54,11 @@ h3{
  margin: 1em 20em;
  border: dashed 2px #5b8bd0;
 }
+
+.alert{
+ font-weight: bold;
+ background-color: #F37053;
+ padding: 1em 1em;
+ margin: 1em 20em;
+ border: dashed 2px #F15B5B;
+}
