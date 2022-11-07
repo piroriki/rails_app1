@@ -2,6 +2,8 @@ require_relative "boot"
 
 require "rails/all"
 
+require "date"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -18,5 +20,11 @@ module RailsApp1
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.action_controller.permit_all_parameters = true
+    config.time_zone = 'Asia/Tokyo'
+    config.i18n.default_locale = :ja
+
+
   end
 end

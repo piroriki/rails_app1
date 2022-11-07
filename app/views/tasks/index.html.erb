@@ -1,0 +1,57 @@
+<%= render "shared/partial-header" %>
+
+<h3>スケジュール一覧</h3>
+
+<% if flash[:notice] %>
+ <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<table>
+ <thead>
+  <tr>
+   <th>ID</th>
+   <th>タイトル</th>
+   <th>開始日</th>
+   <th>終了日</th>
+   <th>終日かどうか</th>
+   <th>スケジュール更新日時</th>
+   <th>メモ</th>
+   <th>参照</th>
+   <th>編集</th>
+   <th>削除</th>
+  </tr>
+ </thead>
+
+ <tbody>
+  <% @tasks.each do |task| %>
+   <tr>
+    <td><%= task.id %></td>
+    <td><%= task.title %></td>
+    <td><%= task.created_at.strftime("%Y年%m月%d日")  %></td>
+    <td><%= task.finished_day.strftime("%Y年%m月%d日") %></td>
+    <td>
+     <% if task.is_all_day == true %>
+                ○
+     <% else task.is_all_day == false %>
+     <% end %>
+    </td>
+    <td><%= task.updated_at.strftime("%Y年%m月%d日%H時%M分") %></td>
+    <td><%= task.memo %></td>
+
+    <td>
+     <%= link_to"参照",task_path(task) %>
+    </td>
+    <td>
+     <%= link_to"編集",edit_task_path(task) %>
+    </td>
+    <td>
+     <%= button_to"削除",task_path(task), method: :delete %>
+    </td>
+   </tr>
+  <% end %>
+ </body>
+</table>
+
+<p><%= link_to "スケジュール新規登録",new_task_path %></p>
+
+<%= render "shared/partial-footer" %>

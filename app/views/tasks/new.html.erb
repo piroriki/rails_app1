@@ -1,0 +1,42 @@
+<%= render "shared/partial-header" %>
+
+<h3>スケジュール新規登録</h3>
+
+<% if flash[:alert] %>
+ <p class="alert"><%= flash[:alert] %></p>
+<% end %>
+
+<%= render "shared/error",obj:@task %>
+ 
+<%= form_with model:@task do |task| %>  
+ <table>
+  <tr>
+   <th><%= task.label :title,"タイトル" %></th>
+   <td><%= task.text_field :title, :placeholder => "スケジュール概要" %></td>
+  </tr>
+ 
+  <tr>
+   <th><%= task.label :created_day,"スケジュール開始日" %>
+   <td><%= task.date_field :created_at %></td>
+  </tr>
+
+  <tr> 
+   <th><%= task.label :finished_day,"スケジュール終了日" %></th>
+   <td><%= task.date_field :finished_day %></td>
+  </tr>
+
+  <tr>
+   <th><%= task.label :is_all_day,"終日かどうか" %></th>
+   <td><%= task.check_box :is_all_day %></td>
+  </tr>
+
+  <tr>
+   <th><%= task.label :memo,"スケジュールメモ" %></th>
+   <td><%= task.text_area :memo %></td>
+  </tr>
+ </table>
+ 
+   <p><%= task.submit"登録完了する" %></p>
+   <p><%= link_to"スケジュール一覧画面に戻る",tasks_index_path %></p>
+
+<% end %>
